@@ -1,0 +1,6 @@
+/venv/
+/main.py
+/config
+/.idea/
+*.xml
+*.iml

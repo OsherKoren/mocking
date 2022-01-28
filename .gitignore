@@ -4,4 +4,7 @@
 /.idea/
 *.xml
 *.iml
-/config.ini
+/config_file.ini
+/tests/.pytest_cache/
+/__pycache__/
+*.pyc

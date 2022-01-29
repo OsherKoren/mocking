@@ -1,6 +1,7 @@
 from configparser import ConfigParser
-from ctypes import Union
 from pathlib import Path
+
+import pyodbc
 
 
 def get_file_path(*, file_name: str) -> Path:
@@ -18,11 +19,16 @@ def get_config(*, file_name: str = 'config_file.ini') -> ConfigParser:
 
 def get_host() -> str:
     config = get_config()
-    return config.get('dev', 'HOST')
+    return config.get('client', 'HOST')
 
 
-conf = get_config()
-print(conf)
+def get_conn_str():
+    config = get_config()
+    driver = config.get('mssql', 'DRIVER')
+    server = config.get('mssql', 'SERVER')
+    db = config.get('mssql', 'DB')
+    conn = pyodbc.connect(f'DRIVER={driver};SERVER={server};DATABASE={db}')
+    return conn
 
-host = get_host()
-print(host)
+
+print(get_conn_str())

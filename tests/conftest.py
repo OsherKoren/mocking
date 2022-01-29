@@ -21,3 +21,14 @@ def mock_get_config(monkeypatch):
     monkeypatch.setattr("configuration.utils.get_config", mock_config)
 
 
+@pytest.fixture
+def mock_get_section(monkeypatch):
+    # monkeypatch utils.get_config()._sections as a fixture
+    def mock_section(*args, **kwargs):
+        return {
+            'driver': 'fake_driver',
+            'server': 'fake_server',
+            'db': 'fake_db'
+        }
+    # monkeypatch to replace utils.get_config()._sections with the behavior of the mock_path defined above
+    monkeypatch.setattr('utils.get_config()._sections', mock_section)

@@ -2,16 +2,16 @@ from configparser import ConfigParser
 from pathlib import Path
 
 
-def get_path(*, file_name: str):
+def get_file_path(*, file_name: str):
     relative_path = Path(__file__).parent.parent
-    path_file = relative_path / file_name
-    return path_file
+    file_path = relative_path / file_name
+    return file_path
 
 
 def get_config(*, file_name: str = 'config_file.ini'):
-    path_conf_file = get_path(file_name=file_name)
+    conf_file_path = get_file_path(file_name=file_name)
     config = ConfigParser()
-    config.read(path_conf_file)
+    config.read(conf_file_path)
     return config
 
 
@@ -21,7 +21,7 @@ def get_host():
 
 
 conf = get_config()
-# print(conf)
+print(conf)
 
 host = get_host()
-# print(host)
+print(host)

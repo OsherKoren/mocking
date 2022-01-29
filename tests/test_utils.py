@@ -9,9 +9,9 @@ def test_get_file_path():
 
 
 def test_get_config(monkeypatch):
-    # mocked return function to replace utils.get_path by returning 'C:/abc/def/ghi'
-    def mock_path():
-        return r'C:\abc\def\ghi'
+    # mocked return function to replace utils.get_path by returning 'C:/fake_folder/fake_sub_folder/fake_file'
+    def mock_path(*args, **kwargs):
+        return r'C:\fake_folder\fake_sub_folder\fake_file'
     # Application of the monkeypatch to replace get_path with the behavior of the mock_path defined above
     monkeypatch.setattr("configuration.utils.get_file_path", mock_path)
     assert isinstance(utils.get_config(file_name='fake_file'), ConfigParser)

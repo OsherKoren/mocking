@@ -1,4 +1,4 @@
 # Play with mocking
 ``
-This is a Repo for tests with mocking
+This is a Repo is for tests with mocking
 ``

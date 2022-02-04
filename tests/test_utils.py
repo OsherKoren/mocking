@@ -3,7 +3,7 @@ from configparser import ConfigParser
 import pyodbc
 import pytest
 
-from configuration import utils
+from data import utils
 
 
 def test_get_file_path():
@@ -17,9 +17,9 @@ def test_get_config(mock_get_file_path):
     assert isinstance(utils.get_config(file_name='fake_file'), ConfigParser)
 
 
-def test_get_host(mock_get_config):
+def test_api_key(mock_get_config):
     """ Test get_host function """
-    assert utils.get_host() == 'HOST'
+    assert utils.get_api_key() == 'API_KEY'
 
 
 @pytest.mark.parametrize('test_section, expected_conn_str',

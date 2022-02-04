@@ -23,10 +23,10 @@ def get_config(*, file_name: str = 'config_file.ini') -> ConfigParser:
     return config
 
 
-def get_host() -> str:
+def get_api_key() -> str:
     """ :return: The host from the config file """
     config = get_config()
-    return config.get('client', 'HOST')
+    return config.get('client', 'API_KEY')
 
 
 def get_conn_str(*, section: dict = {}) -> str:

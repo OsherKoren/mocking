@@ -24,14 +24,14 @@ def get_config(*, file_name: str = 'config_file.ini') -> ConfigParser:
 
 
 def get_api_key() -> str:
-    """ :return: The host from the config file """
+    """ :return: The secrete api key from the config file for api requests  """
     config = get_config()
     return config.get('client', 'API_KEY')
 
 
 def get_conn_str(*, section: dict = {}) -> str:
     """ Gets the connection file.
-    :param section: If the section is set to default: empty dictionary, then gets the section from the config file
+    :param: section: If the section is set to default: empty dictionary, then gets the section from the config file
     :return: The connection string for connecting to db.
     """
     section = section or get_config()._sections['db']  # pylint: disable=W0212

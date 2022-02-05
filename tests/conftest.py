@@ -1,5 +1,7 @@
 import pytest
 
+API_KEY = 'xxxx'
+
 
 @pytest.fixture
 def mock_get_file_path(monkeypatch):

@@ -1,5 +1,4 @@
 /venv/
-/main.py
 /config
 /.idea/
 *.xml
@@ -9,3 +8,4 @@
 *.pyc
 /.pytest_cache/
 /WORKSPACE/
+/config_file.ini

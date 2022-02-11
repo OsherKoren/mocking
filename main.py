@@ -33,4 +33,3 @@ if __name__ == '__main__':
         print(f'The stock reached the level price on {alert} ')
     else:
         print("The stock didn't reach the level price ")
-

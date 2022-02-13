@@ -10,6 +10,6 @@ import main
                             (400, False),
                          ]
                          )
-def test_check_data(monkeypatch, setup_json, test_level, expected):
+def test_run_data_pipeline(monkeypatch, setup_json, test_level, expected):
     monkeypatch.setattr('data.fin_data.load_json', lambda *args, **kwargs: setup_json)
     assert main.run_data_pipeline(level=test_level) == expected
